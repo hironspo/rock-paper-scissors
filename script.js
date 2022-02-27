@@ -16,9 +16,8 @@ function computerPlay() {
 //a one round test game
 function playRound(playerSelection, computerSelection) {
     
-    playerSelection = "Rock";
-    //playerSelection.toLowerCase() = prompt("Chose ROCK, PAPER, or SCISSORS");
-    //playerSelection[0].toUpperCase();
+    playerSelection.toLowerCase() = prompt("Chose ROCK, PAPER, or SCISSORS");
+    playerSelection[0].toUpperCase();
     computerSelection = computerPlay();
 
     //if the player chooses ROCK logic
