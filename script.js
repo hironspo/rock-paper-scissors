@@ -15,18 +15,50 @@ function computerPlay() {
 
 //a one round test game
 function playRound(playerSelection, computerSelection) {
-         
+    
     playerSelection = "Rock";
-    playerSelection.toLowerCase();
-    playerSelection[0].toUpperCase();
+    //playerSelection.toLowerCase() = prompt("Chose ROCK, PAPER, or SCISSORS");
+    //playerSelection[0].toUpperCase();
     computerSelection = computerPlay();
 
-    if (playerSelection === "Rock" && computerSelection === "Paper") {
-        return `You lose! Computers ${computerSelection} beats your ${playerSelection}`;
-    } else if (playerSelection === "Rock" && computerSelection === "Rock") {
-        return `Tie! Computers ${computerSelection} matched your ${playerSelection}`;
-    } else {
-        return `You win! Your ${playerSelection} beats the computers ${computerSelection}`;
+    //if the player chooses ROCK logic
+    if (playerSelection === "Rock") {
+        if (computerSelection === "Paper") {
+            return `You lose! The computers ${computerSelection} beats your ${playerSelection}`;
+        } else if (computerSelection === "Scissors") {
+            return `You win! Your ${playerSelection} beats the computers ${computerSelection}`;
+        } else {
+            return `Tie! Computers ${computerSelection} matches your ${playerSelection}`;
+        }
+    } 
+    
+    //if the player chooses PAPER logic
+     else if (playerSelection === "Paper") {
+        if (computerSelection === "Scissors") {
+            return `You lose! The computers ${computerSelection} beats your ${playerSelection}`;
+        } else if (computerSelection === "Rock") {
+            return `You win! Your ${playerSelection} beats the computers ${computerSelection}`;
+        } else {
+            return `Tie! Computers ${computerSelection} matches your ${playerSelection}`;
+        }
+    }
+
+    //if the player chooses SCISSORS logic
+    else if (playerSelection === "Scissors") {
+        if (computerSelection === "Rock") {
+            return `You lose! The computers ${computerSelection} beats your ${playerSelection}`;
+        } else if (computerSelection === "Paper") {
+            return `You win! Your ${playerSelection} beats the computers ${computerSelection}`;
+        } else {
+            return `Tie! Computers ${computerSelection} matches your ${playerSelection}`;
+        }
     }
 }
 
+function game() {
+
+    for (let i = 0; i < 5; ++i){
+        console.log(playRound());
+    }
+
+}
